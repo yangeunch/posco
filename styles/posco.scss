@@ -1,0 +1,48 @@
+$color1:#0f6e38;
+$color2:#0d278d;
+$color3:#fff;
+$color4:#000;
+$color5:#555;
+body,html {height:300vh;}
+header {background: $color3;  width:1400px; 
+    height:100px; display:flex; flex-flow:row; justify-content:space-between;
+    align-items:center;  z-index: 999; position:fixed; top:0; left:50%;
+    transform:translateX(-50%); position:relative;
+    h1 {
+        a {
+            img {}
+        }
+    }
+    nav {height:100px; background: lime;
+        .gnb {display:flex;
+            > li {display:flex; position:relative;
+                > a {background: aqua; width:200px; line-height:100px;}
+                .sub {background: yellow; height:350px; width:100%;
+                    position:absolute; top:100px;
+                    li {
+                        a {padding:20px; display:block;}
+                    }
+                }
+            }
+        }
+    }
+}
+header::after {background: $color3; z-index: -1; left:-50%; top:0;
+    position:absolute; content:''; display:block; width:1000%; height:100%;
+
+}
+main {position:relative; z-index: 100; width:100%;
+    background:url(../image/posco/s01_bg.jpg) center; height:100vh;
+    background-repeat:no-repeat;
+    background-size: cover;
+    h1 {
+        position:absolute; text-align: center; z-index: 500;
+        right:40%; bottom:40%; transform:translate(10%,30%);
+        font-size:4rem; color:$color3; font-weight: 700; line-height: 1.5;
+    }
+}
+main:after {
+    position:absolute; z-index: 499; content:''; display:block;
+    width:100%; height:100vh;
+    background:linear-gradient(90deg,$color2,transparent,$color1);
+}
